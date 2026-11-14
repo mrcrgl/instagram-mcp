@@ -2,7 +2,7 @@ publicBaseUrl: https://instagram-mcp.mrcrgl.de
 
 meta:
   # Fill in from the Meta app dashboard (App settings → Basic).
-  appId: ""
+  appId: "1681688747005953"
   loginConfigId: ""
 
 ingress:
