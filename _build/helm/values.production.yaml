@@ -1,0 +1,10 @@
+publicBaseUrl: https://instagram-mcp.mrcrgl.de
+
+meta:
+  # Fill in from the Meta app dashboard (App settings → Basic).
+  appId: ""
+  loginConfigId: ""
+
+ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod

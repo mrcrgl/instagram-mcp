@@ -1,0 +1,5 @@
+apiVersion: v2
+name: instagram-mcp
+description: Read-only MCP server for Instagram professional accounts (Facebook Login, stateless)
+type: application
+version: 0.1.0

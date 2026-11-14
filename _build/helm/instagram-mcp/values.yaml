@@ -1,0 +1,42 @@
+image:
+  repository: ghcr.io/mrcrgl/instagram-mcp
+  # Set at deploy time, e.g. sha-1a2b3c4.
+  tag: ""
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+
+# The server keeps no state, so replicas need no sticky sessions.
+replicaCount: 2
+
+# Public origin. Also the host of the Ingress, and the base of the OAuth
+# redirect URI registered in the Meta app: <publicBaseUrl>/oauth/meta/callback
+publicBaseUrl: ""
+
+meta:
+  appId: ""
+  # Facebook Login for Business configuration id. Leave empty to request the
+  # default scopes instead.
+  loginConfigId: ""
+  # Pin, and move forward deliberately: metrics change between versions.
+  graphVersion: v26.0
+
+# Existing Secret with the keys TOKEN_KEYS and META_APP_SECRET. Created
+# outside the chart so no secret passes through Helm.
+existingSecret: instagram-mcp
+
+rustLog: info
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations: {}
+  tlsSecretName: instagram-mcp-tls
+
+resources:
+  requests:
+    cpu: 10m
+    memory: 32Mi
+  limits:
+    cpu: 200m
+    memory: 128Mi
